@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-8764497517675712/7841855711">
+        </com.google.android.gms.ads.AdView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_below="@id/adView"
+            android:id="@+id/consolecard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:cardBackgroundColor="#4E1640"
+                app:cardUseCompatPadding="true"
+                android:elevation="3dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewSent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.35"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:hint="Please connect to the device"
+                        android:textSize="19dp"
+                        android:textColorHint="#15F63A"
+                        android:fontFamily="serif-monospace"
+                        android:textColor="#15F63A"
+                        />
+
+                    <TextView
+                        android:id="@+id/textViewInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.35"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:hint=""
+                        android:textSize="19dp"
+                        android:textColorHint="#15F63A"
+                        android:fontFamily="serif-monospace"
+                        android:textColor="#15F63A"
+                        />
+
+                    <TextView
+                        android:id="@+id/textViewConsole"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.3"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="CONSOLE"
+                        android:textSize="19dp"
+                        android:textAlignment="viewEnd"
+                        android:textColor="#68413E"
+                        android:fontFamily="monospace"
+                        />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/textInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/consolecard"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/customText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:hint="Enter Command to Send"
+                android:singleLine="true" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/send"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="SEND" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInput"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonToggle"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="15dp"
+                android:text="Turn On Device 1"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/buttonToggle1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="15dp"
+                android:text="Turn On Device 2"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/buttonScreen1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="15dp"
+                android:text="Joy Stick Mode"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/buttonScreen2"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="15dp"
+                android:text="Custom buttons mode"
+                android:textSize="16sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/about"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="ABOUT"
+        app:icon="@drawable/about" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/help"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/about"
+            android:text="HELP"
+            app:icon="@drawable/help" />
+
+
+    <RelativeLayout
+        android:id="@+id/splashscreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark">//Set background color
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/splashcombo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/robot"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/signal"
+                android:adjustViewBounds="true"
+                android:src="@drawable/robot"
+                app:layout_constraintBottom_toTopOf="@+id/signal"
+                app:layout_constraintEnd_toStartOf="@+id/phone"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/signal"
+                app:layout_constraintVertical_bias="0.466" />
+
+            <ImageView
+                android:id="@+id/signal"
+                android:layout_width="74dp"
+                android:layout_height="61dp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginBottom="68dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/signal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/robot" />
+
+            <ImageView
+                android:id="@+id/phone"
+                android:layout_width="68dp"
+                android:layout_height="201dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toRightOf="@id/signal"
+                android:adjustViewBounds="true"
+                android:src="@drawable/phone"
+                app:layout_constraintBottom_toTopOf="@+id/signal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/signal"
+                app:layout_constraintTop_toTopOf="@+id/signal" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/appname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/splashcombo"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-condensed"
+            android:text="My Custom Application"
+            android:textColor="@color/colorOff"
+            android:textSize="30dp" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

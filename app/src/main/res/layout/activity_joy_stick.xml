@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context=".JoyStick">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-8764497517675712/4694137567">
+            </com.google.android.gms.ads.AdView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_below="@id/adView"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:cardBackgroundColor="#4E1640"
+                app:cardUseCompatPadding="true"
+                android:elevation="3dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewSent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.35"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:hint="Please connect to the device"
+                        android:textSize="19dp"
+                        android:textColorHint="#15F63A"
+                        android:fontFamily="serif-monospace"
+                        android:textColor="#15F63A"
+                        />
+
+                    <TextView
+                        android:id="@+id/textViewInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.35"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:hint=""
+                        android:textSize="19dp"
+                        android:textColorHint="#15F63A"
+                        android:fontFamily="serif-monospace"
+                        android:textColor="#15F63A"
+                        />
+
+                    <TextView
+                        android:id="@+id/textViewConsole"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.3"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="CONSOLE"
+                        android:textSize="19dp"
+                        android:textAlignment="viewEnd"
+                        android:textColor="#68413E"
+                        android:fontFamily="monospace"
+                        />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/up"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/card"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:icon="@drawable/up"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/stop"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/up"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:icon="@drawable/stop"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/down"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/stop"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:icon="@drawable/down"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp" />
+
+
+            <GridLayout
+                android:id="@+id/buttonset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_below="@id/down"
+                android:columnCount="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_columnWeight="1">
+                    <Button
+                        android:id="@+id/button1"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginVertical="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Button1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_columnWeight="1">
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginVertical="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Button2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_columnWeight="1">
+                    <Button
+                        android:id="@+id/button3"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginVertical="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Button3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_columnWeight="1">
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginVertical="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Button4" />
+                </LinearLayout>
+
+
+            </GridLayout>
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/left"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_toLeftOf="@id/stop"
+                android:layout_below="@id/up"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_centerHorizontal="true"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:icon="@drawable/left"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/right"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_toRightOf="@+id/stop"
+                android:layout_below="@id/up"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_centerHorizontal="true"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:icon="@drawable/right"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="HELP"
+                android:visibility="gone"
+                app:icon="@drawable/help" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
